@@ -1,6 +1,6 @@
 //lower case elements in html are default html elements
 // uppercase elements in html are special html elements
-import Expenses from "./components/Expenses";
+import Expenses from "./components/Expense/Expenses";
 
 function App() {
   const expenses = [
