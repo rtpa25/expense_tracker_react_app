@@ -1,8 +1,12 @@
 //lower case elements in html are default html elements
 // uppercase elements in html are special html elements
 import Expenses from "./components/Expense/Expenses";
+import NewExpense from "./components/NewExpense/NewExpense";
 
 function App() {
+  const addExpenseHandler = (expense) => {
+    console.log(expense);
+  };
   const expenses = [
     {
       id: "e1",
@@ -26,8 +30,7 @@ function App() {
   ];
   return (
     <div>
-      <h2>Let 's get started!</h2>
-      <p> This is also visible </p>
+      <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses items={expenses}></Expenses>
     </div>
   );
