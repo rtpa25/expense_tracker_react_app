@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./ExpenseForm.css";
 
 function ExpenseForm(props) {
+  //this is a statefull component as it manages state
   const [enteredTitle, setEnteredTitle] = useState("");
   const titleChangeHandler = (event) => {
     setEnteredTitle(event.target.value);
@@ -21,11 +22,13 @@ function ExpenseForm(props) {
       amount: enteredAmount,
       date: new Date(enteredDate),
     };
+    // this executes the function that is declared in the parent element
     props.onSaveExpenseData(expenseData);
     setEnteredDate("");
     setEnteredTitle("");
     setEnteredAmount("");
   };
+  //the input value sets the state of the input value on state change
 
   return (
     <form onSubmit={submitHandler}>
@@ -60,6 +63,9 @@ function ExpenseForm(props) {
         </div>
       </div>
       <div className="new-expense__actions">
+        <button className="submit" onClick={props.onCancel}>
+          Cancel
+        </button>
         <button className="submit">Add Expense</button>
       </div>
     </form>
